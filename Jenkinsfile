@@ -1,12 +1,12 @@
 node{
  def app
-    stage('clone') {
+    stage('Clone') {
         checkout scm
   }
-    stage('build image') {
+    stage('Build image') {
         app = docker.build("kayode/nginx")
   }
-    stage('run image') {
+    stage('Run image') {
         docker.image('kayode/nginx').withRun('-p 8083:8083') { c ->
         sh 'docker ps'
 
