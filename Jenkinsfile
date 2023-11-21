@@ -4,7 +4,7 @@ node{
         checkout scm
   }
     stage('build image') {
-        app = docker.build("Kayode/nginx")
+        app = docker.build("kayode/nginx")
   }
     stage('run image') {
         docker.image('kayode/nginx').withRun('-p 8083:8083') { c ->
